@@ -1,0 +1,43 @@
+appId: com.amikom.siakad-universitas
+productName: SIAKAD Universitas
+copyright: Copyright (c) 2026 Universitas AMIKOM Yogyakarta
+
+directories:
+  output: dist
+  buildResources: build
+
+# Hanya proses Electron yang sudah dikompilasi (dist-electron) dan
+# package.json yang dibawa ke dalam paket akhir. Hasil build Next.js
+# (folder "out") disertakan lewat extraResources di bawah, bukan lewat
+# "files", karena bukan bagian dari kode Electron itu sendiri.
+files:
+  - dist-electron/**/*
+  - package.json
+  - "!**/*.map"
+
+extraResources:
+  - from: out
+    to: out
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: portable
+      arch: [x64]
+  icon: build/icon.ico
+  artifactName: "${productName}-${version}-${target}.${ext}"
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: SIAKAD Universitas
+  installerIcon: build/installer-icon.ico
+  uninstallerIcon: build/installer-icon.ico
+  artifactName: SIAKAD-Universitas-Setup.exe
+
+portable:
+  artifactName: SIAKAD-Universitas-Portable.exe
