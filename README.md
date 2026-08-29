@@ -1,4 +1,4 @@
-# SIAKAD Universitas AMIKOM Yogyakarta
+# SIAKAD AMIKOM
 
 Sistem Informasi Akademik, "Satu Platform untuk Seluruh Kebutuhan Akademik". Aplikasi ini berfokus pada **dashboard dan layanan mahasiswa**, dan dapat dijalankan sebagai web maupun aplikasi desktop Windows.
 
